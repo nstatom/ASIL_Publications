@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interactive timeline of lab publications and citation counts.">
+  <title>ASIL Publications & Citation Impact</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <header class="page-header">
+      <div class="eyebrow">Research publications</div>
+      <h1>ASIL Publications &amp; Citation Impact</h1>
+      <p class="intro">Explore publication dates and citation counts. Select a point to view the paper's metadata and references.</p>
+    </header>
+
+    <section class="panel chart-panel" aria-labelledby="chart-heading">
+      <div class="panel-heading">
+        <div>
+          <h2 id="chart-heading">Publication timeline</h2>
+          <p class="muted">Each point represents one DOI in the publication list.</p>
+        </div>
+        <div id="summary" class="summary">Preparing publication list…</div>
+      </div>
+      <div id="status" class="status" role="status" aria-live="polite">Loading DOI list…</div>
+      <div id="chart" aria-label="Scatter plot of publication date versus citation count"></div>
+      <p class="chart-note">Citation counts are supplied by Crossref when available and reflect citations indexed by Crossref, not necessarily every citation source.</p>
+    </section>
+
+    <section class="panel details-panel" aria-labelledby="details-heading">
+      <div class="panel-heading">
+        <div>
+          <h2 id="details-heading">Selected publication</h2>
+          <p class="muted">Click a point in the chart to inspect a paper.</p>
+        </div>
+      </div>
+      <div id="details" class="empty-state">No publication selected yet.</div>
+    </section>
+
+    <footer>
+      Metadata: DOI Citation Formatter and Crossref REST API. Citation counts and reference lists depend on metadata deposited with Crossref.
+    </footer>
+  </main>
+</body>
+</html>
